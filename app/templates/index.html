@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetDoc AI — Pet Disease Diagnosis</title>
+    <meta name="description" content="AI-powered pet disease diagnosis from symptoms. Get instant predictions for your dog or cat.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header" id="header">
+            <div class="logo">
+                <span class="logo-icon">🐾</span>
+                <h1>PetDoc <span class="ai-badge">AI</span></h1>
+            </div>
+            <p class="tagline">Symptom-based disease diagnosis for your furry friend</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="main-card" id="main-card">
+            <!-- Step 1: Pet Type -->
+            <section class="section" id="section-pet-type">
+                <h2 class="section-title">
+                    <span class="step-number">1</span>
+                    Select Pet Type
+                </h2>
+                <div class="pet-toggle" id="pet-toggle">
+                    <button class="pet-btn active" data-pet="dog" id="btn-dog">
+                        <span class="pet-emoji">🐕</span>
+                        <span>Dog</span>
+                    </button>
+                    <button class="pet-btn" data-pet="cat" id="btn-cat">
+                        <span class="pet-emoji">🐈</span>
+                        <span>Cat</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Step 2: Symptoms -->
+            <section class="section" id="section-symptoms">
+                <h2 class="section-title">
+                    <span class="step-number">2</span>
+                    Enter Symptoms
+                </h2>
+                <div class="symptom-input-wrapper" id="symptom-input-wrapper">
+                    <div class="selected-chips" id="selected-chips"></div>
+                    <input
+                        type="text"
+                        id="symptom-input"
+                        class="symptom-input"
+                        placeholder="Type a symptom..."
+                        autocomplete="off"
+                    >
+                    <div class="autocomplete-dropdown" id="autocomplete-dropdown"></div>
+                </div>
+                <p class="hint" id="symptom-hint">Select at least one symptom to get a diagnosis</p>
+            </section>
+
+            <!-- Diagnose Button -->
+            <button class="diagnose-btn" id="diagnose-btn" disabled>
+                <span class="btn-text">Diagnose</span>
+                <span class="btn-loader" id="btn-loader"></span>
+            </button>
+        </main>
+
+        <!-- Results -->
+        <section class="results-section hidden" id="results-section">
+            <h2 class="results-title">Possible Diagnoses</h2>
+            <div class="results-grid" id="results-grid"></div>
+            <p class="disclaimer">⚠️ This is an AI prediction for informational purposes only. Always consult a licensed veterinarian.</p>
+        </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
